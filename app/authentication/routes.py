@@ -49,7 +49,7 @@ def signin():
             if logged_user and check_password_hash(logged_user.password, password):
                 login_user(logged_user)
                 flash('You were successful in your initiation. Congratulations, and welcome to the Jedi Knights', 'auth-success')
-                return redirect(url_for('site.profile'))
+                return redirect(url_for('site.home'))
             else:
                 flash('You do not have access to this content.', 'auth-failed')
                 return redirect(url_for('auth.signin'))
